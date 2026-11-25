@@ -191,14 +191,3 @@ heat2d/
 - Temporal blocking (several time steps per sweep over a tile) is what actually
   beats the bandwidth limit.
 - Run on a 32+ core cloud VM to extend the scaling curve.
-
-## CV line
-
-> Built a hybrid MPI + OpenMP 2D heat-diffusion solver in C++ (row-wise domain
-> decomposition with halo exchange, bit-exact vs serial across all decompositions);
-> benchmarked strong and weak scaling (1.9× on 2 cores + HT, ~18 GB/s effective
-> bandwidth), showed the kernel is memory-bandwidth bound, and evaluated cache
-> blocking (a measured slowdown, explained) and comm/compute overlap (−12% MPI time).
-
-Rerun on a machine with more physical cores (and native Linux for perf) to
-extend the curve, then update these numbers.
